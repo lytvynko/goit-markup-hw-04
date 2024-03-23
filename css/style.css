@@ -7,7 +7,7 @@
   --light-slate: #8e8f99;
   --cornflower: #e7e9fc;
   --cloud: #f4f4fd;
-  --navy-blue-modal: #2e2f42;
+  --navy-blue-modal: rgba(46, 47, 66, 0.4);
   --grey: #2e2f42;
   --white: #ffffff;
   --dairy: #fcfcfc;
@@ -150,13 +150,13 @@ main {
   position: relative;
 }
 .nav .link::after {
-  content: '';
+  content: "";
   border-bottom: 4px solid transparent;
   bottom: 0;
   left: 0;
   width: 100%;
   position: absolute;
-  transition: .5s;
+  transition: 0.5s;
 }
 .nav .link:hover::after,
 .nav .link:focus::after {
@@ -272,13 +272,13 @@ main {
   height: 40px;
   border-radius: 50%;
   background-color: var(--iris);
-  transition: .5s;
+  transition: 0.5s;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-.socials__item:hover, .socials__item:focus {
+.socials__item:hover,
+.socials__item:focus {
   background-color: var(--green);
 }
 .socials__icon {
@@ -368,11 +368,11 @@ main {
   border-radius: 4px;
   padding: 16px;
   margin-bottom: 8px;
-  transition: .5s;
+  transition: 0.5s;
 }
 .customers-icon {
-  fill: var(--light-slate );
-  transition: .5s;
+  fill: var(--light-slate);
+  transition: 0.5s;
 }
 .customers-icon-wrap:hover,
 .customers-icon-wrap:focus {
@@ -401,8 +401,7 @@ main {
   background-color: var(--iris);
   visibility: hidden;
   opacity: 0;
-  transition: .5s;
-
+  transition: 0.5s;
 }
 .portfolio-overlay p {
   color: var(--white);
@@ -412,4 +411,67 @@ main {
 .portfolio-overlay:focus {
   visibility: visible;
   opacity: 1;
+}
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--navy-blue-modal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
+  transition-property: opacity, visibility;
+}
+.modal {
+  max-width: 408px;
+  width: 100%;
+  max-height: 584px;
+  height: 100%;
+  background-color: var(--dairy);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  padding: 24px;
+  
+  
+}
+.modal-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--cornflower);
+  border: none;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  transition: 0.5s;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--ocean);
+  border: 1px solid var(--ocean);
+}
+.modal-btn-icon {
+  fill: var(--navy-blue);
+  transition: 0.5s;
+}
+.modal-btn:hover .modal-btn-icon,
+.modal-btn:focus .modal-btn-icon {
+  fill: var(--white);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
