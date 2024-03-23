@@ -4,7 +4,7 @@
   --navy-blue: #2e2f42;
   --green: #31d0aa;
   --slate: #434455;
-  --cloud-slate: #8e8f99;
+  --light-slate: #8e8f99;
   --cornflower: #e7e9fc;
   --cloud: #f4f4fd;
   --navy-blue-modal: #2e2f42;
@@ -212,6 +212,15 @@ main {
 .advantages-title {
   margin-bottom: 8px;
 }
+.advantages-icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cloud);
+  border-radius: 4px;
+  padding: 24px;
+  margin-bottom: 8px;
+}
 .products-title {
   margin-bottom: 72px;
 }
@@ -238,6 +247,7 @@ main {
 .team-cards-info__title,
 .team p {
   text-align: center;
+  margin-bottom: 8px;
 }
 .team-cards {
   display: flex;
@@ -251,13 +261,34 @@ main {
     0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 .team-cards-info {
-  padding: 32px 0;
+  padding: 32px 16px;
+}
+.socials {
+  display: flex;
+  gap: 24px;
+}
+.socials__item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--iris);
+  transition: .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.socials__item:hover, .socials__item:focus {
+  background-color: var(--green);
+}
+.socials__icon {
+  fill: var(--cloud);
 }
 .footer {
   background-color: var(--navy-blue);
   padding: 100px 0;
 }
-.footer p {
+.footer-text {
   color: var(--white);
   max-width: 264px;
   width: 100%;
@@ -317,4 +348,68 @@ main {
   position: absolute;
   left: -1px;
   top: -1px;
+}
+.customers-title {
+  margin-bottom: 72px;
+}
+.customers-list {
+  display: flex;
+  gap: 24px;
+}
+.customers-list__item {
+  flex-basis: 168px;
+}
+
+.customers-icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--light-slate);
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 8px;
+  transition: .5s;
+}
+.customers-icon {
+  fill: var(--light-slate );
+  transition: .5s;
+}
+.customers-icon-wrap:hover,
+.customers-icon-wrap:focus {
+  border-color: var(--ocean);
+  cursor: pointer;
+}
+.customers-icon-wrap:hover .customers-icon {
+  fill: var(--ocean);
+}
+.footer-wrap {
+  display: flex;
+  gap: 120px;
+}
+.footer-socials__title {
+  color: var(--white);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.portfolio-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 40px 32px;
+  background-color: var(--iris);
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s;
+
+}
+.portfolio-overlay p {
+  color: var(--white);
+}
+.portfolio-item:hover .portfolio-overlay,
+.portfolio-item:focus .portfolio-overlay,
+.portfolio-overlay:focus {
+  visibility: visible;
+  opacity: 1;
 }
